@@ -11,7 +11,7 @@ class MockupScreenOne extends StatefulWidget {
 class _MockupScreenOneState extends State<MockupScreenOne> {
   int _selectedIndex = 0;
 
-  // Movie data list moved into the state class
+  // Movie data list
   final List<Map<String, String>> nowPlaying = [
     {
       "title": "To All the Boys:P.S.I still Love You",
@@ -55,7 +55,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
     return Scaffold(
       body: Column(
         children: [
-          // Purple header with rounded bottom corners
+      
           ClipRRect(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(24),
@@ -67,7 +67,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start, 
                 children: [
-                  // Row with TMDB, search, and filters
+              
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -89,7 +89,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: "Find your movies...",
-                            // Removed filled: true and fillColor to remove white background
+                        
                             prefixIcon: const Icon(Icons.search, color: Colors.white70), 
                             hintStyle: const TextStyle(color: Colors.white70), 
                             contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12), 
@@ -117,7 +117,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                   ),
                   const SizedBox(height: 16),
 
-                  // Discover text aligned to the left
+                
                   Text(
                     "Discover and enjoy\nyour favourite movies",
                     textAlign: TextAlign.left, 
@@ -141,7 +141,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen, // Changed color
+                    backgroundColor: Colors.lightGreen, 
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -155,9 +155,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.black,
                     side: const BorderSide(color: Colors.grey),
-                    // shape: RoundedRectangleBorder( // Removed shape in previous turn
-                    //   borderRadius: BorderRadius.circular(8),
-                    // ),
+                    
                   ),
                   child: const Text("Upcoming"),
                 ),
@@ -167,9 +165,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.black,
                     side: const BorderSide(color: Colors.grey),
-                    // shape: RoundedRectangleBorder( // Removed shape in previous turn
-                    //   borderRadius: BorderRadius.circular(8),
-                    // ),
+                   
                   ),
                   child: const Text("Now Playing"),
                 ),
@@ -178,7 +174,7 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
           ),
 
           // Movie list
-          Expanded( // Keep Expanded to fill the remaining space
+          Expanded( 
             child: Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -189,13 +185,13 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
                   return Card(
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ListTile(
-                      // Wrapped image in SizedBox to control height and width for vertical orientation
+                    
                       leading: SizedBox(
-                        width: 100, // Adjusted width
-                        height: 150, // Increased height for vertical orientation
+                        width: 100, 
+                        height: 150, 
                         child: Image.asset(
                           movie["image"]!,
-                          fit: BoxFit.cover, // Use BoxFit.cover to fill the box
+                          fit: BoxFit.cover, 
                         ),
                       ),
                       title: Text(
@@ -229,11 +225,11 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar( // Keep the BottomNavigationBar
+      bottomNavigationBar: BottomNavigationBar( 
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        // Set selected and unselected colors to grey by default
+     
         selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.grey,
         items: [
@@ -241,11 +237,11 @@ class _MockupScreenOneState extends State<MockupScreenOne> {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          // Movies item: icon is light green when selected, grey otherwise
+        
           BottomNavigationBarItem(
             icon: Icon(
               Icons.movie,
-              color: _selectedIndex == 1 ? Colors.lightGreen : Colors.grey, // Movies icon color logic
+              color: _selectedIndex == 1 ? Colors.lightGreen : Colors.grey,
             ),
             label: 'Movies',
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexam/MockupScreenTwo.dart';
 import 'MockupScreenOne.dart';
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home:const MockupScreenOne(),
+      home:const MockupScreenTwo(),
     );
   }
 }class MyHomePage extends StatefulWidget {
